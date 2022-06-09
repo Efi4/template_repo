@@ -1,0 +1,16 @@
+version: '3.5'
+
+services:
+  inventoryapi:
+    image: testApi
+    container_name: inventoryapi
+    depends_on:
+      - inventorydbmigration
+
+  inventorydbmigration:
+    image: testMigration
+    container_name: inventorydbmigration
+
+networks:
+  default:
+    name: inventoryapi-network
