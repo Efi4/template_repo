@@ -1,0 +1,22 @@
+name: testWorkflow
+
+on: push
+
+jobs:
+  first:
+    runs-on: ubuntu-latest
+    steps:
+    - run: date
+  second:
+    runs-on: windows-latest
+    steps:
+    - run: date  
+  third:
+    runs-on: macos-latest
+    steps:
+    - run: date
+  dependent:
+    needs: [first, second, third]
+    runs-on: windows-latest
+    steps:
+    - run: date
