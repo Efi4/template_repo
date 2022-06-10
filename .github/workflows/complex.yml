@@ -6,6 +6,7 @@ jobs:
   first:
     runs-on: ubuntu-latest
     steps:
+    - uses: ./customActions
     - run: date
   second:
     runs-on: windows-latest
